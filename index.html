@@ -22,7 +22,7 @@
 
 
 </head>
-<body>
+<body style="clip: rect(auto, auto, auto, auto)">
 <!-- Main header -->
 <header>
 	<div id="skip"> <a class="visuallyhidden focusable" href="#skiptarget1" id="skip-main">Skip to main content</a> <a class="visuallyhidden focusable" href="#skiptarget2" id="skip-side">Skip to supporting information</a> <a class="visuallyhidden focusable" href="#skiptarget3" id="skip-foot">Skip to footer and contact information</a> </div>
@@ -36,7 +36,12 @@
 		<h1 id="hd-siteTitle" class="grid_4 alpha">TV Station Contour Map
 <!-- 		<br>Auction ID:<input type="text" id="auctionid" name="auctionid" value="901" style="font-size:20px;width:80px;"/> -->
 		</h1>
-<!-- 		<h2 id="hd-siteSubTitle" class="grid_4 omega"><span id="currentInfo"></span><a class="btn btn-large" id="btn-refreshMap" href="#void" onClick="refreshMap();">Refresh Map</a></h2> -->
+        <h1 id="subtitle" align="center" class="grid_4 alpha" 
+            style="color: #FFFFFF; height: 46px;">&nbsp;Displaying All Channel 
+            <label id="channel_number" style="color: #FFFFFF; font-size: x-large"></label> Stations</h1>
+ 		
+        
+<!-- 		<h2 id="SubTitle" class="grid_4 omega"><span id="currentInfo"></span><a class="btn btn-large" id="btn-refreshMap" href="#void" onClick="refreshMap();">Refresh Map</a></h2> -->
 <!-- 		<h2 id="hd-timeStamp" class="grid_4 omega"></h2> -->
 		<div class="clear"></div>
         
@@ -95,7 +100,7 @@
 		<input id='facilityID' type='text' value="" style='width:200px'> <input id='goUser1' type='button' value="Go">
  		<h2 id="itemByCityState">Search by City, State </h2>
 		<select input id='cityState' style='width:200px'></select> <input id='goUser2' type='button' value="Go">-->
-	    <h2 id="H1">Search by Channel
+	    <h2 id="H1">Select Channel
 		<select input id='channel' type='text' value="" style='width:200px'> 
             <option value='1' selected='True'>1 </option>
             <option value='2'>2</option>
@@ -109,7 +114,7 @@
             <option value='10'>10</option>
             <option value='11'>11</option>
             <option value='12'>12</option>
-            <option value='13'>134</option>
+            <option value='13'>13</option>
             <option value='14'>14</option>
             <option value='15'>15</option>
             <option value='16'>16</option>
@@ -149,7 +154,7 @@
             <option value='50'>50</option>
             <option value='51'>51</option>
         </select>
-        <input id='goUser3' type='button' value="Go"/></h2>
+        <!--<input id='goUser3' type='button' value="Go"/>--></h2>
  		<!--<h2 id="H2">Search by DMA</h2>
 		<select input id='dma' style='width:200px'></select> <input id='goUser4' type='button' value="Go">-->
 		<!--<h2 id="H3">Search by Congressional District</h2>

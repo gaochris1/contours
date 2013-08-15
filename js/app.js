@@ -42,10 +42,11 @@ $(document).ready(function () {
 	     document.getElementById("searchForm").reset();
 	 });*/
 	
-  	 $('#goUser3').click(function(){
+  	 $('#channel').change(function(){
+  	 //$('#goUser3').click(function(){
     //alert("here");
   	     getcmaInput('channel');
-  	     document.getElementById("searchForm").reset();
+  	     //document.getElementById("searchForm").reset();
   	 });
      
      /*$('#goUser4').click(function(){
@@ -128,7 +129,7 @@ var map = new OpenLayers.Map({
     div: "coveragemap",
     projection: "EPSG:900913",
     displayProjection: "EPSG:4326",
-    numZoomLevels:14,
+    //numZoomLevels:14,
     maxExtent: new OpenLayers.Bounds(-2.003750834E7,-2.003750834E7,2.003750834E7,2.003750834E7),
 	units: "meters"
 });
@@ -142,16 +143,14 @@ var mapboxTerrain = new OpenLayers.Layer.XYZ(
 	    "Mapbox Terrain map",
 	    [
 	   //  "https://dnv9my2eseobd.cloudfront.net/v3/fcc.map-rons6wgv/${z}/${x}/${y}.png"
-	     "http://a.tiles.mapbox.com/v3/fcc.map-rons6wgv/${z}/${x}/${y}.png",
-	     "http://b.tiles.mapbox.com/v3/fcc.map-rons6wgv/${z}/${x}/${y}.png",
-	     "http://c.tiles.mapbox.com/v3/fcc.map-rons6wgv/${z}/${x}/${y}.png",
-	     "http://d.tiles.mapbox.com/v3/fcc.map-rons6wgv/${z}/${x}/${y}.png"
+	     "http://a.tiles.mapbox.com/v3/fcc.map-toolde8w/${z}/${x}/${y}.png",
+	      "http://b.tiles.mapbox.com/v3/fcc.map-toolde8w/${z}/${x}/${y}.png",
+	       "http://c.tiles.mapbox.com/v3/fcc.map-toolde8w/${z}/${x}/${y}.png",
+	        "http://d.tiles.mapbox.com/v3/fcc.map-toolde8w/${z}/${x}/${y}.png"
 	    ], {
-	        attribution: "Data &copy; <a href='http://www.openstreetmap.org/'>OpenStreetMap</a> " +
-            "and contributors, CC-BY-SA",
 	        sphericalMercator: true,
 	        wrapDateLine: true,
-	        numZoomLevels:8,
+	        //numZoomLevels:8,
 	        transitionEffect: "resize",
 	        buffer: 1
 	    }
@@ -237,7 +236,7 @@ layers.push(stamenToner);
 
 var contourStyle = new OpenLayers.StyleMap({
     "default": new OpenLayers.Style({
-        strokeColor: "#81a3d0",
+        strokeColor: "#d1d1d1",
 		//strokeOpacity: 1,
     	strokeWidth: 2
 		//fillColor: "#FFAEDB",
@@ -247,8 +246,8 @@ var contourStyle = new OpenLayers.StyleMap({
 
 var allContourStyle = new OpenLayers.StyleMap({
     "default": new OpenLayers.Style({
-        strokeColor: "#ccdaec",
-		strokeOpacity: 0.7,
+        strokeColor: "#939393",
+		strokeOpacity: 0.4,
     	strokeWidth: 1
 		//fillColor: "#FFAEDB",
 		//fillOpacity: 0
@@ -257,13 +256,13 @@ var allContourStyle = new OpenLayers.StyleMap({
 
 var sourceStyle = new OpenLayers.StyleMap({
     "default": new OpenLayers.Style({
-        strokeColor: "#81a3d0",
+        strokeColor: "#d1d1d1",
 		//strokeOpacity: 1,
     	//strokeWidth: 2,
 		pointRadius:2,
-		fillColor:"#81a3d0",
+		fillColor:"#d1d1d1",
 		label: "${CALLSIGN}",
-        fontColor: "#81a3d0",
+        fontColor: "#d1d1d1",
         fontFamily: "sans-serif",
         fontWeight: "bold",
         labelXOffset: "35"
@@ -297,8 +296,8 @@ var sourceStyle = new OpenLayers.StyleMap({
 
 var allSourceStyle = new OpenLayers.StyleMap({
     "default": new OpenLayers.Style({
-        strokeColor: "#ccdaec",
-		strokeOpacity: 0.7,
+        strokeColor: "#939393",
+		strokeOpacity: 0.4,
     	//strokeWidth: 2,
 		pointRadius:1,
 		fillColor:"#323232",
@@ -574,6 +573,7 @@ function getcmaInput(type){
     
     $('#tbl_results').find('tbody').append(rows);
     }
+    $("#channel_number").text(channel);
     drawChannelMap(channel);
     }
 
@@ -795,13 +795,13 @@ function drawChannelMap(channelId){
 		var feats = p.read(myJson);	
 		cmaLayer.removeAllFeatures();
 	  	cmaLayer.addFeatures(feats);
-	  	map.zoomToExtent(cmaLayer.getDataExtent());
+	  	//map.zoomToExtent(cmaLayer.getDataExtent());
 	}
 	var feats = p.read(myJson);	
 	cmaLayer.removeAllFeatures();
   	cmaLayer.addFeatures(feats);
     ////alert("outside contour feats Length: " + feats.length);
-  	map.zoomToExtent(cmaLayer.getDataExtent());
+  	//map.zoomToExtent(cmaLayer.getDataExtent());
 }
 //end of function drawChannelMap
 
